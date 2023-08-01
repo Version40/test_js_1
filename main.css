@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #a9a6a6;
+}
+
+table {
+    margin-bottom: 60px;
+}
+
+tr {
+    background: #f2f2f2;
+    border: 1px solid gray;
+}
+
+i {
+    color: #565555;
+    margin-right: 6px;
+}
+
+.th_icon:first-child {
+    margin-left: 24px;
+}
+
+.button_icon {
+    cursor: pointer;
+}
+
