@@ -80,3 +80,36 @@ i {
     height: 400px;
 }
 
+.note_menu input {
+    width: 350px;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.note_menu textarea {
+    width: 350px;
+    height: 40px;
+    margin: 10px 0;
+    resize: vertical;
+}
+
+.note_menu select {
+    width: 350px;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.note_menu button {
+    width: 150px;
+    height: 40px;
+}
+
+.close_note_menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+}
+

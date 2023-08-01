@@ -180,30 +180,42 @@ function deleteNote(noteId) {
 
 // Функція для додавання нової нотатки
 function addNote() {
-  var categorySelect = document.getElementById("category");
-  var contentTextarea = document.getElementById("content");
+    const nameInput = document.getElementById("name");
+    const categorySelect = document.getElementById("category");
+    const contentTextarea = document.getElementById("content");
+    const dateInput = document.getElementById("dates");
 
-  var category = categorySelect.value;
-  var content = contentTextarea.value.trim();
+    const name = nameInput.value.trim();
+    const category = categorySelect.value;
+    const content = contentTextarea.value.trim();
+    const dates = dateInput.value;
 
-  if (!content) {
-    alert("Note content cannot be empty!");
-    return;
-  }
+    if (!name || !content) {
+        alert("Name and Note content cannot be empty!");
+        return;
+    }
 
-  var timeOfCreation = new Date().toLocaleString();
-  var datesMentioned = content.match(/\d{1,2}\/\d{1,2}\/\d{4}/g) || [];
+    // Форматування дати створення нотатки
+    let dateOfCreation = new Date();
+    let year = dateOfCreation.getFullYear();
+    let month = (dateOfCreation.getMonth() + 1).toString().padStart(2, "0");
+    let day = dateOfCreation.getDate().toString().padStart(2, "0");
+    let hours = dateOfCreation.getHours().toString().padStart(2, "0");
+    let minutes = dateOfCreation.getMinutes().toString().padStart(2, "0");
+    let created = `${year}-${month}-${day} ${hours}:${minutes}`;
 
-  notesData.push({
-    id: notesData.length + 1,
-    timeOfCreation: timeOfCreation,
-    content: content,
-    category: category,
-    datesMentioned: datesMentioned
-  });
+    notesData.push({
+        id: notesData.length + 1,
+        name: name,
+        created: created,
+        content: content,
+        category: category,
+        dates: [dates]
+    });
 
-  // Очистити поле вводу після додавання нотатки
-  contentTextarea.value = "";
+    nameInput.value = "";
+    contentTextarea.value = "";
+    dateInput.value = "";
 
   updateTables();
 }
