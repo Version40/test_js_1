@@ -10,6 +10,7 @@
     <title>Notes App</title>
 </head>
 <body>
+    <button class="archive_button" id="toggleArchivedTableBtn" onclick="toggleArchivedTable()">Show Archive</button>
     <table id="notes-table">
         <tr>
             <th>Name</th>
@@ -20,14 +21,19 @@
             <th></th>
         </tr>
     </table>
+    <div class="button_block">
+        <button onclick="openCreateNoteMenu()" class="create_note_button">Create Note</button>
+    </div>
 
-    <table id="archived-table">
+
+    <table id="archived-table" style="display: none;">
         <tr>
-            <th>Time of Creation</th>
-            <th>Note Content</th>
-            <th>Note Category</th>
-            <th>Dates Mentioned</th>
-            <th>Actions</th>
+            <th>Name</th>
+            <th>Created</th>
+            <th>Content</th>
+            <th>Category</th>
+            <th>Dates</th>
+            <th></th>
         </tr>
     </table>
 
@@ -39,21 +45,21 @@
         </tr>
     </table>
 
+    <div id="hidden_note_menu" class="hidden_note_menu">
+        <div class="note_menu">
+            <i onclick="closeCreateNoteMenu()" id="close_note_menu" class="close_note_menu fa-solid fa-xmark"></i>
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="Task">Task</option>
+                <option value="Random Thought">Random Thought</option>
+                <option value="Idea">Idea</option>
+             </select>
+            <label for="content">Content:</label>
+            <textarea id="content"></textarea>
+            <button onclick="addNote()">Add Note</button>
+        </div>
+    </div>
+
     <script src="main.js"></script>
-
-
-<!--    <h1>Notes App</h1>-->
-
-<!--    <h2>Add New Note</h2>-->
-<!--    <label for="category">Category:</label>-->
-<!--      <select id="category">-->
-<!--        <option value="Task">Task</option>-->
-<!--        <option value="Random Thought">Random Thought</option>-->
-<!--        <option value="Idea">Idea</option>-->
-<!--      </select>-->
-<!--      <br>-->
-<!--      <label for="content">Content:</label>-->
-<!--      <textarea id="content"></textarea>-->
-<!--      <button onclick="addNote()">Add Note</button>-->
 </body>
 </html>

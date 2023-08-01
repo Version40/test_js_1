@@ -20,6 +20,10 @@ table {
     margin-bottom: 60px;
 }
 
+#notes-table {
+    margin-bottom: 10px;
+}
+
 tr {
     background: #f2f2f2;
     border: 1px solid gray;
@@ -36,5 +40,43 @@ i {
 
 .button_icon {
     cursor: pointer;
+}
+
+.archive_button {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.button_block {
+    display: flex;
+    justify-content: end;
+}
+
+.create_note_button {
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.hidden_note_menu {
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.note_menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #a4a2a2;
+    border: 1px solid grey;
+    border-radius: 16px;
+    width: 500px;
+    height: 400px;
 }
 
